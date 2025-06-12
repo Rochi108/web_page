@@ -77,3 +77,26 @@ body {
 .header .navbar li a:hover {
     color: #ffffff;
 }
+
+.me .me_photo img{
+    float: inline-end;
+    margin: 20px 40px 20px 0px;
+    margin-left: 100px;
+}
+
+.me .me_info h1{
+    margin: 20px 0px 10px 40px;
+    font-size: 40px;
+}
+
+.me .me_info p{
+    margin: 20px 0px 20px 40px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.me .me_info .philosophy{
+    margin: 20px 0px 20px 40px;
+    font-size: 25px;
+    font-style: italic;
+}
