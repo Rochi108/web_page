@@ -21,18 +21,20 @@
 }
 
 body {
-    background-color: #e3ceff;
+    background-color: #ffffff;
+    background: linear-gradient(59deg,rgba(255, 255, 255, 1) 0%, rgba(246, 206, 255, 1) 100%);
 }
 
 .header {
     background-color: #1b1b1b;
+    border-bottom: 10px black solid;
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: right;
     align-items: center;
     height: 80px;
-    padding: 10px 0%;
+    z-index: 1;
 }
 
 .header .logo img{
@@ -79,24 +81,112 @@ body {
 }
 
 .me .me_photo img{
-    float: inline-end;
-    margin: 20px 40px 20px 0px;
+    height: 385px;
+    width: 385px;
+    margin: 60px 40px 20px 0px;
     margin-left: 100px;
+    border: 5px solid #000000;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    float: inline-end;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: photo_shadow;
+}
+
+@keyframes photo_shadow{
+    from {
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+    to {
+        box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .me .me_info h1{
-    margin: 20px 0px 10px 40px;
-    font-size: 40px;
+    margin: 120px 0px 10px 40px;
+    font-size: 45px;
+}
+
+.me .me_info h1::after {
+    content: "";
+    display: block;
+    height: 5px;
+    background-color: #1b1b1b;
+    margin-top: 10px;
+    position: absolute;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-name: bar;
+}
+
+@keyframes bar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 20%;
+        animation-play-state: paused;
+    }
 }
 
 .me .me_info p{
-    margin: 20px 0px 20px 40px;
+    margin: 60px 0px 20px 40px;
     font-size: 20px;
     text-align: justify;
+    animation-name: me_info;
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards
+}
+
+@keyframes me_info {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+        animation-play-state: paused;
+    }
 }
 
 .me .me_info .philosophy{
-    margin: 20px 0px 20px 40px;
+    margin: 60px 0px 180px 40px;
     font-size: 25px;
     font-style: italic;
+}
+
+.skills {
+    background-color: #1b1b1b;
+    background-size: auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    border-top: 10px black solid;
+}
+
+.skills .skills_info h2 {
+    margin: 60px 0px 70px 40px;
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.skills .skills_info h3{
+    max-width: 30rem;
+    margin-left: 20px;
+    text-align: justify;
+    font-style: bold;
+    color: #ffffff;
+}
+
+.skills .skills_info p{
+    max-width: 30rem;
+    margin-left: 20px;
+    text-align: justify;
+    color: #ffffff;
+}
+
+.skills .skills_info .skills_list li {
+    color: #575757;
+    font-weight: bold;
 }
