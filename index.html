@@ -5,25 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Roberto Simple Website</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="icon" type="img/logo.png" href="/assets/img/logo.png">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" type="img/logo.png" href="../assets/img/logo.png">
 </head>
 
 <body>
 
     <!--------------Cabezera de pagina------------------>
 
-    <header class="header">
-            <div class="logo">
-                <a href="#home"><img src="/assets/img/logo.png" alt="Logo from the page"></a>
-            </div>
-            <div class="name">
-                <p>RobertoBZ</p>
-            </div>
-            <div class="header-content">
+    <header class="header" id="home">
+            <div class="navbar">
                 <nav>
-                    <ul class="navbar">
-                        <li><a href="#home">Home</a></li>
+                    <ul>
+                        <li class="logo"><a href="#home"><img src="../assets/img/logo.png"></a></li>
+                        <li class="logo_name"><a href="#home">RobertoBZ</a></li>
                         <li><a href="#about">About Me</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -31,14 +26,13 @@
                 </nav>
             </div>
     </header>
-    <br>
 
     <!--------------Quien soy------------------>
     
     <div class="me">
         <div class="me_info">
             <div class="me_photo">
-                <img src="/assets/img/me_photo.jpeg" alt="Me photo">
+                <img src="../assets/img/me_photo.jpeg" alt="Me photo">
             </div>
             <h1>Hi, my name is Roberto, a web programmer.</h1>
             <p>
@@ -55,7 +49,7 @@
 
     <div class="skills">
         <div class="skills_info">
-        <h2>About Me</h2>
+        <h2 id="about">About Me</h2>
         <h3>Conocimientos</h3>
         <p>Poseo varios conocimientos de de programacion web gracias a varios cursos que he realizado con el fin de ampliar mis conocimientos.</p>
             <ul class="skills_list">
