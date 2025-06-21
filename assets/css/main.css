@@ -16,50 +16,69 @@ body {
     padding: 0%;
 }
 
-.navbar ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    background-color: #1b1b1b;
-    border-bottom: #000000 solid 5px;
-    padding: 0.5em 1em;
-    align-items: center;
-    position: sticky;
+.navbar {
+    position: fixed;
     top: 0;
-    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+    background: #1b1b1b;
 }
 
-.navbar .logo img{
-    height: 50px;
-    width: 50px;
+.navbar ul {
+    list-style: none;
+    display: flex;
+    border-bottom: none;
+    padding: 0.5em 1.5em;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.navbar .logo img {
+    height: 2em;
+    width: 2em;
+    margin-top: 5px;
 }
 
 .navbar .logo_name {
     margin-right: auto;
 }
 
-.navbar .logo_name a{
-    margin-left: -2em;
+.navbar .logo_name a {
+    margin-left: -2.8em;
     padding-left: 1em;
-    color: #ffffff;
+    color: #e0b3ff;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.6em;
+    letter-spacing: 1.5px;
+    transition: color 0.3s;
 }
 
-.navbar a{
-    display: flex;
+.navbar a {
+    display: inline-block;
     text-decoration: none;
-    color: #575757;
-    padding: 1em 2em;
-    display: inline;
+    color: #bbbaba;
+    padding: 0.8em 1.6em;
+    font-size: 1.08em;
+    font-weight: 500;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
-.navbar img:hover{
-    transform: scale(1.2);
-    transition: all 0.3s ease-in-out;
+.navbar a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 20%;
+    bottom: 8px;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, #e0b3ff 0%, #fff 100%);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: #ffffff;
     transition: all 0.3s ease-in-out;
 }
@@ -98,40 +117,26 @@ body {
     }
 }
 
-#about {
-    background-color: #ffffff;
-    padding: 50px 0px;
-    border-top: 10px black solid;
-}
-
-.me .me_photo img{
-    height: 385px;
-    width: 385px;
+.me .me_photo img {
+    height: 24em;
+    width: 24em;
     max-width: 100%;
-    height: auto;
-    margin: 30px 40px 20px 0px;
-    margin-left: 100px;
+    margin: 2em 2.5em 1.25em 0px;
+    margin-left: 6em;
     border: 5px solid #000000;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0em 0em 0em rgba(0, 0, 0, 0.2);
     float: inline-end;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-name: photo_shadow;
+    transition: box-shadow 2s ease-in-out;
 }
 
-@keyframes photo_shadow{
-    from {
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
-    }
-    to {
-        box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.2);
-    }
+.me .me_photo img.animated {
+    box-shadow: 1.25em 1.25em 0em rgba(0, 0, 0, 0.2);
 }
 
-.me .me_info h1{
-    margin: 60px 0px 10px 40px;
+.me .me_info h1 {
+    margin: 140px 40px 0px 40px;
     font-size: 45px;
+    position: relative;
 }
 
 .me .me_info h1::after {
@@ -141,78 +146,97 @@ body {
     background-color: #1b1b1b;
     margin-top: 10px;
     position: absolute;
-    animation-delay: 0.2s;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    animation-name: bar;
+    width: 0%;
+    transition: width 3s ease-in-out 0.2s;
 }
 
-@keyframes bar {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 20%;
-        animation-play-state: paused;
-    }
+.me .me_info h1.animated::after {
+    width: 20%;
 }
 
-.me .me_info p{
-    margin: 60px 0px 20px 40px;
+.me .me_info p {
+    margin: 60px 40px 20px 40px;
     font-size: 20px;
     text-align: justify;
-    animation-name: me_info;
-    animation-duration: 1.8s;
-    animation-fill-mode: forwards
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
 }
 
-@keyframes me_info {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 100%;
-        animation-play-state: paused;
-    }
+.me .me_info p.animated {
+    opacity: 1;
 }
 
-.me .me_info .philosophy{
-    margin: 60px 0px 180px 40px;
+.me .me_info .philosophy {
+    margin: 60px 40px 180px 40px;
     font-size: 25px;
     font-style: italic;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
+}
+
+.me .me_info .philosophy.animated {
+    opacity: 1;
 }
 
 .skills {
-    background-color: #1b1b1b;
-    background-size: auto;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    border-top: 10px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3em;
+    padding: 2em 2em;
+    background: #1b1b1b;
 }
 
-.skills .skills_info h2 {
-    margin: 60px 0px 70px 40px;
-    font-size: 25px;
-    text-align: center;
+.about_info h2,
+.skills_info h2 {
+    font-size: 2em;
+    color: #e0b3ff;
+    margin-bottom: 0.5em;
+    margin: 10px 20px 10px 20px;
+}
+
+.about_info p, .skills_info p {
+    font-size: 1.1em;
     color: #ffffff;
-}
-
-.skills .skills_info h3{
-    max-width: 30rem;
-    margin-left: 20px;
+    margin-bottom: 1em;
     text-align: justify;
-    font-style: bold;
-    color: #ffffff;
+    margin: 10px 20px 10px 20px;
 }
 
-.skills .skills_info p{
-    max-width: 30rem;
-    margin-left: 20px;
-    text-align: justify;
-    color: #ffffff;
+.skills_info h2 {
+    margin-top: 0;
 }
 
-.skills .skills_info .skills_list li {
-    color: #575757;
+.skills_list {
+    list-style: none;
+    padding: 0;
+
+    margin: 10px 20px 10px 20px;
+}
+
+.skills_list li {
+    background: #e0b3ff;
+    color: #1b1b1b;
+    display: inline-block;
+    margin: 0.3em 0.7em 0.3em 0;
+    padding: 0.5em 1.2em;
     font-weight: bold;
+    font-size: 1em;
+}
+
+.skills_list li:hover {
+    background: #c77dff;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 700px) {
+    .skills {
+        flex-direction: column;
+        gap: 2em;
+        margin: 2em 1em;
+        padding: 1.5em 0.5em;
+    }
+    .skills > div {
+        max-width: 100%;
+    }
 }
