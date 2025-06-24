@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Roberto Simple Website</title>
+
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="icon" type="img/logo.png" href="../assets/img/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,7 +21,6 @@
                         <li class="logo"><a href="#home"><img src="../assets/img/logo.png"></a></li>
                         <li class="logo_name"><a href="#home">ROBERTOBZ</a></li>
                         <li><a href="#about">About Me</a></li>
-                        <li><a href="#skills">Skills</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -30,10 +31,10 @@
     
     <div class="me">
         <div class="me_info">
+            <h1>Hi, my name is Roberto, a web programmer.</h1>
             <div class="me_photo">
                 <img src="../assets/img/me_photo.jpeg" alt="Me photo">
             </div>
-            <h1>Hi, my name is Roberto, a web programmer.</h1>
             <p>
                 I consider myself a fairly creative and curious person who tries to give my best at all times. I have always been fascinated by programming, always wondering how it was possible to create so many different experiences or how it was possible to create so many different programs. Finally, my curiosity got the better of me, and now here I am, ready to satisfy it.
             </p>
@@ -48,41 +49,44 @@
 
     <div class="skills">
         <div class="about_info">
-            <h2 id="about">About Me</h2>
+            <h2>About Me<i class="ri-cursor-fill"></i></h2>
             <p>Soy un gran fanatico tanto de la lectura como de la escritura, soy un avido lector de libros. 
             </p>
             <p>Me gusta mucho la musica, en especial el rock y el metal, pero mi gusto es muy variado en general. Desde las cosas mas extrañas hastas las mas populares del momento. Varia depende del dia, supongo.
             </p>
         </div>
         <div class="skills_info">
-            <h2>Programations Skills</h2>
+            <h2>Programations Skills<i class="ri-terminal-box-line"></i></h2>
             <p>Poseo varios conocimientos sobre programacion web gracias a varios cursos que he realizados anteriormente. <b>NO SOY UN PROFESIONAL</b>, pero intento dar lo mejor de mi.
             </p>
             <ul class="skills_list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
+                <li><i class="ri-html5-fill"></i>HTML</li>
+                <li><i class="ri-css3-fill"></i>CSS</li>
+                <li><i class="ri-code-box-fill"></i>JAVASCRIPT</li>
             </ul>
         </div>
     </div>
 
     <!--------------Contactos------------------>
 
-    <div></div>
-        <ul>
-            <li><a href="Instagram.html">Instagram</a></li>
-            <li><a href="Gmail.html">Gmail</a></li>
-        </ul>
-    </div>
+<div class="contact" id="contact">
+    <h2>FOLLOW ME<i class="ri-user-add-fill"></i></h2>
+    <ul class="contact_list">
+        <li><a href="Instagram.com" target="_blank"><i class="ri-instagram-fill"></i>INSTAGRAM</a></li>
+        <li><a href="Gmail.com" target="_blank"><i class="ri-facebook-fill"></i>FACEBOOK</a></li>
+    </ul>
+</div>
 
     <!--------------Footer de la pagina------------------>
 
-    <footer>
-        <div class="footer">
-            <p>&copy; 2025 Rochi Enterprise. Todos los derechos reservados.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="../assets/img/logo.png" alt="Logo" class="footer-logo">
+            <span class="footer-name">ROBERTOBZ</span>
+            <p class="footer-copy">&copy; 2025 Rochi Enterprise. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src="assets/js/animation.js"></script>
+<script src="assets/js/animation.js"></script>
 </body>
 </html>
